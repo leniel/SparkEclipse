@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>spark</groupId>
-  <artifactId>com.lenielmacaferi</artifactId>
+  <groupId>spark-backend</groupId>
+  <artifactId>com.lenielmacaferi.spark-backend</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>${project.artifactId}</name>
-  <description>My wonderfull scala app</description>
-  <inceptionYear>2015</inceptionYear>
+  <description>Spark app that loads XML files using Spark XML and then queries the XML data using Spark SQL.</description>
+  <inceptionYear>12-12-2016</inceptionYear>
   <licenses>
     <license>
       <name>My License</name>
