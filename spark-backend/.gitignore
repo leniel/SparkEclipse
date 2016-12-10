@@ -13,6 +13,7 @@ syntax: glob
 .project
 .manager
 .scala_dependencies
+*.cache
 
 # idea
 .idea
@@ -39,3 +40,7 @@ build.log
 
 #SHITTY output not in target directory
 build.log
+
+# Ignoring the app output folders
+output
+csv
