@@ -1,4 +1,4 @@
-name := """spark-front"""
+name := """spark-frontend"""
 organization := "com.lenielmacaferi"
 
 version := "1.0-SNAPSHOT"
@@ -17,4 +17,5 @@ libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "1.5.0
 // play.sbt.routes.RoutesKeys.routesImport += "com.lenielmacaferi.binders._"
 
 // Compile the project before generating Eclipse files, so that generated .scala or .class files for views and routes are present
+// See: https://www.playframework.com/documentation/2.5.x/IDE
 EclipseKeys.preTasks := Seq(compile in Compile)
