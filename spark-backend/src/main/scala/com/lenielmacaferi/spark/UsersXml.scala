@@ -2,7 +2,8 @@ package com.lenielmacaferi.spark
 
 /**
  * @author Leniel Macaferi
- *
+ * @company Leniel Macaferi's Consulting
+ * 
  * 12-2016
  */
 
@@ -37,8 +38,8 @@ object ProcessUsersXml {
     df = sqlContext.read
       .format("xml")
       .option("rowTag", "user")
-      .load("input/Users10.out.xml") // For debugging purposes...
-    //.load("data/Users100000.out.xml")// Reorganizing projects structure...
+      //.load("input/Users10.out.xml") // For debugging purposes...
+      .load("input/Users100000.out.xml")
 
     // Displays the XML data structure
     df.printSchema()
@@ -48,13 +49,13 @@ object ProcessUsersXml {
     // Creating a TempView so that sqlContext can run queries against it
     df.createOrReplaceTempView("users")
 
-    //getAllUsers(sqlContext)
+    getAllUsers(sqlContext)
 
-    //getAllUsersOrderedByReputation(sqlContext)
+    getAllUsersOrderedByReputation(sqlContext)
 
-    //getUsersCountByLocation(sqlContext)
+    getUsersCountByLocation(sqlContext)
 
-    //searchAboutMe(sqlContext, "person")
+    searchAboutMe(sqlContext, "readytohelp")
 
     getUsersGroupedByRegistrationYear(sqlContext)
 
@@ -111,7 +112,8 @@ object ProcessUsersXml {
 
   def searchAboutMe(sqlContext: SQLContext, search: String) = {
 
-    var df: DataFrame = sqlContext.sql("""SELECT DisplayName, AboutMe FROM users WHERE LOWER(AboutMe) LIKE '%person%'""")
+    var df: DataFrame = sqlContext.
+    sql("""SELECT DisplayName, AboutMe FROM users WHERE LOWER(AboutMe) LIKE '%""" + search.toLowerCase + """%'""")
 
     df.show()
 

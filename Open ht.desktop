@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=spark-frontend
+Exec=sbt -jvm-debug 9999 ~run
+Icon=utilities-terminal
+Terminal=true
+Categories=Application;
+Path=git/SparkEclipse/spark-frontend
+Name[en_US]=spark-frontend

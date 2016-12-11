@@ -1,5 +1,12 @@
 package com.lenielmacaferi.spark
 
+/**
+ * @author Leniel Macaferi
+ * @company Leniel Macaferi's Consulting
+ * 
+ * 12-2016
+ */
+
 import org.apache.spark.{ SparkConf, SparkContext }
 import org.apache.spark.sql.{ DataFrame, SQLContext }
 import com.databricks.spark.xml

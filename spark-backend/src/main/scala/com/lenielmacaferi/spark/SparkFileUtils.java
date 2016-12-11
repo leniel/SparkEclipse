@@ -2,7 +2,8 @@ package com.lenielmacaferi.spark;
 
 /**
  * @author Leniel Macaferi
- *
+ * @company Leniel Macaferi's Consulting
+ * 
  * 12-2016
  */
 
@@ -82,7 +83,7 @@ public final class SparkFileUtils
 					}
 					catch(IOException e)
 					{
-						System.out.println("Error renaming and copyting file.");
+						System.out.println("Error renaming and copying file.");
 
 						e.printStackTrace();
 					}
