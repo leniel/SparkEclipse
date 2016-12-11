@@ -4,7 +4,8 @@
   <artifactId>com.lenielmacaferi.spark-backend</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>${project.artifactId}</name>
-  <description>Spark app that loads XML files using Spark XML and then queries the XML data using Spark SQL.</description>
+  <description>Spark app that loads XML files using Spark XML and then queries the XML data using Spark SQL
+  The queried data is saved to CSV files for post processing\analysis in Spreadsheet software.</description>
   <inceptionYear>12-12-2016</inceptionYear>
   <licenses>
     <license>
@@ -67,7 +68,7 @@
         <!-- see http://davidb.github.com/scala-maven-plugin -->
         <groupId>net.alchim31.maven</groupId>
         <artifactId>scala-maven-plugin</artifactId>
-        <version>3.2.0</version>
+        <version>3.2.2</version>
         <executions>
           <execution>
             <goals>
@@ -114,6 +115,23 @@
           </includes>
         </configuration>
       </plugin>
+      
+      <!-- This will generate the resulting .jar in the project's root folder so that we
+      don't get invalid path exception when trying to submit the .jar to Spark with spark-submit. For example:
+      16/12/10 18:51:55 INFO SparkContext: Created broadcast 0 from newAPIHadoopFile at XmlFile.scala:46
+      Exception in thread "main" org.apache.hadoop.mapreduce.lib.input.InvalidInputException:
+      Input path does not exist: file:/home/hadoop/git/SparkEclipse/spark-backend/target/input/Users10.out.xml
+       -->
+      <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-jar-plugin</artifactId>
+    <version>2.0</version>
+    <configuration>
+        <jarName>../com.lenielmacaferi.spark-backend-0.0.1-SNAPSHOT</jarName>
+        <outputDirectory></outputDirectory>
+    </configuration>
+</plugin>
+
     </plugins>
      </pluginManagement>
   </build>

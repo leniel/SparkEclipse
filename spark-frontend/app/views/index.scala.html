@@ -1,0 +1,20 @@
+@(fileNames: List[String])
+
+@import helper._
+
+@main("Welcome to Play") {
+
+<h1>Spark Front-End</h1>
+}
+
+<div id="files">
+
+<ul>
+
+@fileNames.map { fileName => 
+    <li><a href="@routes.HomeController.getCsv(fileName)">@fileName</a></li><br/>
+}
+
+</ul>
+
+</div>

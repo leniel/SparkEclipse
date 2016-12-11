@@ -1,0 +1,20 @@
+
+h1
+{
+	text-align: center;
+}
+
+div#files
+{
+	text-align: center;
+}
+
+li
+{
+	padding-botton:17px;
+}
+
+ul
+{
+    display: inline;
+}

@@ -122,11 +122,12 @@ object ProcessUsersXml {
 
     val fullPath: String = "output/" + fileName
 
-    // Writing the query result to CSV for post processing in Spreadsheet software for example
-    df.coalesce(1) // Writes to a single file instead of creating multiple file partitions
-      .write.option("header", "true") // Add headers to the CSV
-      .mode("overwrite") // Overwrites the file if it already exists
-      .csv(fullPath) // Path where the CSV will be stored
+    // Writing the query result to CSV for post processing in Spreadsheet software for example.
+    df.coalesce(1) // Writes to a single file instead of creating multiple file partitions...
+    //when running in a Cluster should be removed since it removes the benefit of parallelism.
+      .write.option("header", "true") // Add headers to the CSV.
+      .mode("overwrite") // Overwrites the file if it already exists.
+      .csv(fullPath) // Path where the CSV will be stored.
 
     SparkFileUtils.renameFile(fullPath, fileName)
   }
